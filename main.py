@@ -1,18 +1,16 @@
 import requests
 import json
 
-# print("200 is a great number")
-# print(2)
-
-# print()
-############################
+calculation_to_units = 24
+name_of_unit = "hours"
 
 def days_to_units(num_of_days) :
-    calculation_to_units = 24 * 60 * 60
-    name_of_unit = "seconds"
-    print(f"{num_of_days} days are {calculation_to_units * num_of_days} {name_of_unit}")
+    if num_of_days > 0:
+        return f"{num_of_days} days are {calculation_to_units * num_of_days} {name_of_unit}"
+    return "you entered a negative value, so no conversion for you!"
 
-days_to_units(20)
-days_to_units(35)
-days_to_units(50)
-days_to_units(110)
+user_input = input("Hey user, enter a number of days and I will convert it to hours!\n")
+user_input_number = int(user_input)
+
+calculated_value = days_to_units(user_input_number)
+print(calculated_value)
