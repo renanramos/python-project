@@ -6,10 +6,12 @@ def days_to_units(num_of_days) :
         return f"{num_of_days} days are {calculation_to_units * num_of_days} {name_of_unit}"
     elif num_of_days == 0:
         return "you entered a 0, please enter a valid positive number"
-    return "you entered a negative value, so no conversion for you!"
 
 user_input = input("Hey user, enter a number of days and I will convert it to hours!\n")
-user_input_number = int(user_input)
 
-calculated_value = days_to_units(user_input_number)
-print(calculated_value)
+if user_input.isdigit():
+    user_input_number = int(user_input)
+    calculated_value = days_to_units(user_input_number)
+    print(calculated_value)
+else:
+    print('your input is not a number. Do not ruin my program!')
