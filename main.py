@@ -18,7 +18,7 @@ def validate_and_execute():
     except ValueError:
         print(f"your input '{num_of_days_element}' is not a number. Do not ruin my program!")
 
-while user_input != "exit" :
+while user_input != "exit":
     user_input = input("Hey user, enter number of days as comma separated list and I will convert it to hours!\n")
-    for num_of_days_element in user_input.split(", "):
+    for num_of_days_element in set(user_input.split(", ")):
         validate_and_execute()
