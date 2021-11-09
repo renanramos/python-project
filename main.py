@@ -7,6 +7,8 @@ name_of_unit = "hours"
 def days_to_units(num_of_days) :
     if num_of_days > 0:
         return f"{num_of_days} days are {calculation_to_units * num_of_days} {name_of_unit}"
+    elif num_of_days == 0:
+        return "you entered a 0, please enter a valid positive number"
     return "you entered a negative value, so no conversion for you!"
 
 user_input = input("Hey user, enter a number of days and I will convert it to hours!\n")
